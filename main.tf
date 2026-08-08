@@ -38,3 +38,11 @@ resource "google_project_iam_member" "network_binding4" {
   member  = each.value
 }
 
+
+
+# --- Added from old repo (missing in new as of comparison) ---
+resource "google_project_service" "artifact_registry" {
+  project            = var.project_id
+  service            = "artifactregistry.googleapis.com"
+  disable_on_destroy = false
+}
